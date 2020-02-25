@@ -1,8 +1,8 @@
 ---
 title: My awesome post!
 author: ''
-date: '2020-01-09'
-slug: my-new-project
+date: '2020-02-23'
+slug: awesome-project
 categories: []
 tags:
   - Academic
@@ -20,9 +20,5 @@ projects: []
 ---
 
 An amazing plot:
-
-```{r}
-plot(cars)
-```
 
 

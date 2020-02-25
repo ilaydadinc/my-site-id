@@ -1,28 +1,371 @@
 ---
-title: "awesome stuff"
-author: "Ilayda Dinc"
-date: "1/9/2020"
-output: html_document
+title: "Snowshoe Hare Body Condition"
+author: ''
+date: '2020-02-23'
+slug: awesome-project
+categories: []
+tags:
+  - Academic
+  - R Markdown
+subtitle: ''
+summary: ''
+authors: [Ilayda Dinc]
+lastmod: '2020-02-23T15:02:39-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
 ---
 
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
 
 
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>The study aims to understand the changes in Snowshoe hare(Lepus americanus) density and physical characteristics of Snowshoe hares in Bonanza Creek Experimental Forest in Alaska between years 1998-2012. Capture-recapture studies of snowshoe hares at 5 different locations showed that snowshoe hare densities has been declining since 1999[1]. This project analyzes the survival of snowshow hares by looking at the changes in physical characteristics of Snowshoe hares over time.</p>
+<center>
+<div class="figure">
+<img src="images/hare.jpg" alt="Figure 1: Snowshoe Hare (Lepus Americanus) in the season change. Snowshoe hares are covered with white fur over winter and their fur starts to turn brown as the snow fades. Source: http://timberjay.com/stories/for-snowshoe-hares-its-time-for-a-change,14060" id="id" class="class" style="width:30.0%;height:70.0%" />
+<p class="caption"><strong>Figure 1: Snowshoe Hare (Lepus Americanus) in the season change.</strong> Snowshoe hares are covered with white fur over winter and their fur starts to turn brown as the snow fades. <em>Source: <a href="http://timberjay.com/stories/for-snowshoe-hares-its-time-for-a-change,14060" class="uri">http://timberjay.com/stories/for-snowshoe-hares-its-time-for-a-change,14060</a></em></p>
 </div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="/project/awesome-project/index_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
-</div>
+</center>
+<pre class="r"><code>#Read in the data
+#Do some cleanup
+
+snowshoe&lt;- read_csv(&quot;showshoe_lter.csv&quot;) %&gt;% 
+  mutate(date=mdy(date)) %&gt;% 
+  separate(date, into = c(&quot;year&quot;,&quot;month&quot;,&quot;day&quot;), sep = &quot;-&quot;)%&gt;% 
+  mutate(grid= str_to_lower(grid), 
+   age=str_to_lower(age),
+   sex=str_to_lower(sex)) %&gt;% 
+  select(-time,-notes)
+
+
+snowshoe2&lt;- snowshoe %&gt;% 
+  mutate(body_condition= weight/hindft) # add a column for the body condition index
+
+# summary(snowshoe2)</code></pre>
+<pre class="r"><code>summary_snowshoe&lt;- snowshoe2 %&gt;% 
+  group_by(year) %&gt;% 
+  summarize(
+    avg_mass = mean(weight,  na.rm = TRUE),
+    avg_length= mean(hindft,na.rm = TRUE),
+    avg_body= mean(body_condition,na.rm = TRUE),
+    sd= sd(body_condition,na.rm= TRUE),
+    sample =length(year))
+ # mutate columns for average stats: average weight, average hindfeet length and average body condition index and the standard deviation of average body condition index
+
+
+#Create the data frame for the summary statistics table
+
+table2&lt;- summary_snowshoe%&gt;% 
+  mutate(`Mean Weight (g) ` = round(avg_mass, 2),
+         `Mean Hindfeet Length (mm)` = round(avg_length, 2),
+         &#39;Mean Body Condition Index (g/mm)&#39;= round(avg_body,2)) %&gt;% 
+  rename(&quot;Year&quot; = year, &quot;Sample Size&quot;= sample) %&gt;% 
+    drop_na() %&gt;% 
+  select(-avg_mass,-avg_length,-avg_body,-sd) #Clean up the names and get rid of deselect unused columns</code></pre>
+<pre class="r"><code>snowshoe_graph_2 &lt;- ggplot(summary_snowshoe, aes(x = year, y = avg_body)) +
+  geom_bar(stat=&quot;identity&quot;, color=&quot;black&quot;,fill= &quot;darkseagreen&quot;,
+           position=position_dodge())+
+  geom_errorbar(aes(ymin=avg_body-sd, ymax=avg_body+sd), width=.2,
+                 position=position_dodge())+
+  theme_bw() +
+  labs(x = &quot;Year&quot;, y = &quot;Body Condition Index (g/mm)&quot;)+
+  scale_y_continuous(breaks = seq(0,24, by = 2))+
+  theme(text = element_text(size=14))+
+   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+
+
+
+
+
+ snowshoe_graph_2</code></pre>
+<p><img src="/project/awesome-project/index_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><strong>Figure 2: Snowshoe Hare Body Condition over the years (1998-2012).</strong> Body Weight/ Hindfoot Length is used as the Body Condition Index based on the previous research stating that body condition is strongly correlated to mass and hind foot length, and the index is robust to age and sex differences [2] The bars represent the yearly mean Body Condition Indices of both adult and juvenile snowshoe hares from both sex. Error bars indicate ± 1 standard deviation. The Body Condition Indices showed an overall decreasing trend over the years. The error bars show that variance of Body Condition Indices within the population are getting smaller. <em>Data used with permission from The Bonanza Creek LTER.</em></p>
+<pre class="r"><code>kable(table2, caption = &#39;&lt;b&gt;Table 1. Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&lt;/b&gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  &lt;i&gt;Data used with permission from The Bonanza Creek LTER.&lt;i&gt; &#39;) %&gt;% 
+        kable_styling(bootstrap_options = c(&quot;striped&quot;,&quot;responsive&quot;, &quot;hold_position&quot;, &quot;hover&quot;,&quot;condensed&quot;,&quot;bordered&quot;), full_width = FALSE, position = &quot;center&quot;)</code></pre>
+<table class="table table-striped table-responsive table-hover table-condensed table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-5">Table 1: </span><b>Table 1. Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.</b> The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences. <i>Data used with permission from The Bonanza Creek LTER.<i> </i></i>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Year
+</th>
+<th style="text-align:right;">
+Sample Size
+</th>
+<th style="text-align:right;">
+Mean Weight (g)
+</th>
+<th style="text-align:right;">
+Mean Hindfeet Length (mm)
+</th>
+<th style="text-align:right;">
+Mean Body Condition Index (g/mm)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1998
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+1704.75
+</td>
+<td style="text-align:right;">
+125.57
+</td>
+<td style="text-align:right;">
+13.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1999
+</td>
+<td style="text-align:right;">
+392
+</td>
+<td style="text-align:right;">
+1250.38
+</td>
+<td style="text-align:right;">
+130.82
+</td>
+<td style="text-align:right;">
+9.88
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2000
+</td>
+<td style="text-align:right;">
+260
+</td>
+<td style="text-align:right;">
+1376.64
+</td>
+<td style="text-align:right;">
+131.66
+</td>
+<td style="text-align:right;">
+11.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2001
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+1390.21
+</td>
+<td style="text-align:right;">
+133.79
+</td>
+<td style="text-align:right;">
+11.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2002
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+1201.57
+</td>
+<td style="text-align:right;">
+124.72
+</td>
+<td style="text-align:right;">
+9.24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2003
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:right;">
+1212.72
+</td>
+<td style="text-align:right;">
+127.56
+</td>
+<td style="text-align:right;">
+9.36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2004
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:right;">
+1472.16
+</td>
+<td style="text-align:right;">
+131.78
+</td>
+<td style="text-align:right;">
+11.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2005
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+1269.00
+</td>
+<td style="text-align:right;">
+124.30
+</td>
+<td style="text-align:right;">
+9.43
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2006
+</td>
+<td style="text-align:right;">
+193
+</td>
+<td style="text-align:right;">
+1364.58
+</td>
+<td style="text-align:right;">
+126.07
+</td>
+<td style="text-align:right;">
+9.72
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2007
+</td>
+<td style="text-align:right;">
+203
+</td>
+<td style="text-align:right;">
+1371.70
+</td>
+<td style="text-align:right;">
+127.79
+</td>
+<td style="text-align:right;">
+10.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2008
+</td>
+<td style="text-align:right;">
+351
+</td>
+<td style="text-align:right;">
+1317.25
+</td>
+<td style="text-align:right;">
+127.45
+</td>
+<td style="text-align:right;">
+9.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2009
+</td>
+<td style="text-align:right;">
+491
+</td>
+<td style="text-align:right;">
+1337.73
+</td>
+<td style="text-align:right;">
+134.60
+</td>
+<td style="text-align:right;">
+9.58
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2010
+</td>
+<td style="text-align:right;">
+402
+</td>
+<td style="text-align:right;">
+1392.84
+</td>
+<td style="text-align:right;">
+134.00
+</td>
+<td style="text-align:right;">
+9.72
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2011
+</td>
+<td style="text-align:right;">
+427
+</td>
+<td style="text-align:right;">
+1403.96
+</td>
+<td style="text-align:right;">
+133.75
+</td>
+<td style="text-align:right;">
+9.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2012
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+1327.38
+</td>
+<td style="text-align:right;">
+137.60
+</td>
+<td style="text-align:right;">
+9.53
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>REFERENCES</strong></p>
+<p><strong>[1]</strong> :Kielland, Knut; Chapin, F. Stuart; Ruess, Roger W. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present, Bonanza Creek LTER - University of Alaska Fairbanks. BNZ:55, <a href="http://www.lter.uaf.edu/data/data-detail/id/55" class="uri">http://www.lter.uaf.edu/data/data-detail/id/55</a>. <a href="doi:10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14" class="uri">doi:10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14</a></p>
+<p><strong>[2]</strong> Wirsing Aaron J, Steury Todd D, Murray Dennis L. Noninvasive estimation of body composition in small mammals: a comparison of conductive and morphometric techniques. Physiol Biochem Zool. 2002;75(5):489–97</p>
