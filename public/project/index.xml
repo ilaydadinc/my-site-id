@@ -13,6 +13,18 @@
     </image>
     
     <item>
+      <title>My awesome post!</title>
+      <link>/project/awesome-project/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/awesome-project/</guid>
+      <description>
+
+
+&lt;p&gt;An amazing plot:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Snowshoe Hare Body Condition</title>
       <link>/project/awesome-project/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
@@ -368,18 +380,6 @@ Mean Body Condition Index (g/mm)
 &lt;p&gt;&lt;strong&gt;REFERENCES&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; :Kielland, Knut; Chapin, F. Stuart; Ruess, Roger W. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present, Bonanza Creek LTER - University of Alaska Fairbanks. BNZ:55, &lt;a href=&#34;http://www.lter.uaf.edu/data/data-detail/id/55&#34; class=&#34;uri&#34;&gt;http://www.lter.uaf.edu/data/data-detail/id/55&lt;/a&gt;. &lt;a href=&#34;doi:10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&#34; class=&#34;uri&#34;&gt;doi:10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;[2]&lt;/strong&gt; Wirsing Aaron J, Steury Todd D, Murray Dennis L. Noninvasive estimation of body composition in small mammals: a comparison of conductive and morphometric techniques. Physiol Biochem Zool. 2002;75(5):489–97&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My awesome post!</title>
-      <link>/project/awesome-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/awesome-project/</guid>
-      <description>
-
-
-&lt;p&gt;An amazing plot:&lt;/p&gt;
 </description>
     </item>
     

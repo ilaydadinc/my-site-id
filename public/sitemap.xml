@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>/project/awesome-project/</loc>
+    <lastmod>2020-01-09T15:02:39-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/project/</loc>
     <lastmod>2020-02-23T15:02:39-08:00</lastmod>
   </url>
@@ -65,11 +70,6 @@
   <url>
     <loc>/tags/</loc>
     <lastmod>2020-02-23T15:02:39-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/awesome-project/</loc>
-    <lastmod>2020-01-09T15:02:39-08:00</lastmod>
   </url>
   
   <url>
