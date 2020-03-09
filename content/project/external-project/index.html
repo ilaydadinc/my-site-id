@@ -1,0 +1,76 @@
+---
+title: Spatial Data Analysis
+author: 'Ilayda Dinc'
+date: '2020-02-19'
+slug: external-project
+categories: []
+tags:
+  - Academic
+  - R Markdown
+  - Spatial Data Analysis
+subtitle: 'Map of Maui Land Use and Watersheds'
+summary: 'This project aims to visualize the watersheds and main types of land covers on Maui island.'
+authors: [Ilayda Dinc]
+lastmod: '2020-02-19T15:02:39-08:00'
+featured: no
+image:
+  caption: 'Maui View from Poli Poli'
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>Maui is the second largest Hawaiian island with the surface area of 727.2 square miles [1]. This project aims to visualize the watersheds and main types of land covers on the island.</p>
+<pre class="r"><code>#reading in the data
+
+hawaii_land &lt;- read_sf(dsn = &quot;.&quot;, layer = &quot;Land_Use_Land_Cover_LULC&quot;) %&gt;% 
+  dplyr::select(landcover) %&gt;% 
+  filter(!str_detect(landcover, pattern = &quot;0&quot;))
+
+#filtering for main land use types
+hawaii_land2&lt;- hawaii_land %&gt;% 
+  filter(landcover %in% c(&quot;Cropland and Pasture&quot;,&quot;Residential&quot;,&quot;Evergreen Forest Land&quot;, &quot;Shrub and Brush Rangeland&quot;))
+  
+#unique(hawaii_land$landcover)
+  
+hawaii_water &lt;- read_sf(dsn = &quot;.&quot;, layer = &quot;Watersheds&quot;)
+
+# checking crs 
+#st_crs(hawaii_land)  #4326
+
+#st_crs(hawaii_water) #4326</code></pre>
+<pre class="r"><code># grpahing watersheds and land use together
+ggplot(hawaii_land)+
+  geom_sf(color = &quot;black&quot;,
+          size = 0.1) + 
+  geom_sf(data = hawaii_land2, 
+          aes(fill = landcover), color = &quot;NA&quot;) +
+  scale_fill_manual(values=c(&quot;darkgoldenrod2&quot;,&quot;darkgreen&quot;,&quot;darkorchid4&quot;,&quot;palegreen3&quot;),name=&quot;Land Cover&quot;)+
+   geom_sf(data = hawaii_water, 
+          color = &quot;dodgerblue4&quot;, 
+          alpha = 0.3,
+          size = 0.15,
+          color = &quot;NA&quot;) + 
+  coord_sf(datum = NA) + # Removes graticules
+  geom_point(aes(x = -156.3319, y = 20.7984), size = 2)+
+  geom_text(x = -156.3319, y = 20.82, label = &quot;Maui&quot;, size=7)+ 
+  coord_sf(xlim = c(-155.98,-156.68), ylim = c(20.45,21.1)) +
+  theme_bw()+
+  labs(x = &quot;Longitude&quot;, y = &quot;Latitude&quot;)+
+  theme(
+    legend.position = &quot;right&quot;,
+    legend.justification = c(&quot;right&quot;),
+    legend.box.just = &quot;right&quot;,
+    legend.margin = margin(3, 3, 3, 3),
+    legend.text = element_text(size = 7)
+    )+
+   annotation_scale(location = &quot;br&quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &quot;br&quot;, which_north = &quot;true&quot;, 
+        pad_x = unit(0.3, &quot;in&quot;), pad_y = unit(0.3, &quot;in&quot;),
+        style = north_arrow_fancy_orienteering)</code></pre>
+<p><img src="/project/external-project/index_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" />
+<strong>Figure 2: Map of main land use types and the watersheds on the island of Maui</strong>. The most prominent land use types are Cropland and Pasture, Evergreen Forest Land, and Shrub and Brush Rangeland. Evergreen Forestland is mostly clustred around the watersheds. <em>Data used with permission from Hawaii Statewide GIS Program.</em></p>
+<p><strong>REFERENCES</strong></p>
+<p><strong>[1]</strong> : “Table 5.08 - Land Area of Islands: 2000”, 2004 State of Hawaii Data Book (PDF), State of Hawaii, 2004, retrieved 2007-07-23.</p>

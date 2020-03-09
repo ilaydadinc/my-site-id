@@ -19,26 +19,39 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
-  title = "CEO"
-  company = "GenCoin"
+  title = "Project Coordinator"
+  company = "Adopt a Cookstove Initiative, UCSB Bren School"
   company_url = ""
-  location = "California"
-  date_start = "2017-01-01"
+  location = "Santa Barbara, CA (with travel to multiple Rwanda locations)"
+  date_start = "2019-04-01"
   date_end = ""
   description = """
   Responsibilities include:
   
-  * Analysing
-  * Modelling
-  * Deploying
+  * Life Cycle Assessment
+  * Literature Review
+  * Fundraising
+  * Interviews with researchers,industry experts, and non-profits
   """
 
 [[experience]]
-  title = "Professor"
-  company = "University X"
-  company_url = ""
-  location = "California"
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
-  description = """Taught electronic engineering and researched semiconductor physics."""
+  title = "Regional Coordination Intern"
+  company = "United Nations Convention to Combat Desertification (UNCCD)"
+  company_url = "https://www.unccd.int"
+  location = "Istanbul, TR"
+  date_start = "2018-01-01"
+  date_end = "2018-06-01"
+  description = """Monitored registration and organization of Regional Workshop on UNCCD Reporting attended by 62 experts from 22 countries from 3 regions (Northern Mediterranean, Central and Eastern Europe, and Central Asia) """
+  
+[[experience]]
+  title = "Project Intern"
+  company = "Mikado Sustainable Development Consulting"
+  company_url = "http://www.mikadoconsulting.com/en/"
+  location = "Istanbul, TR"
+  date_start = "2017-10-01"
+  date_end = "2018-06-01"
+  description = """ Headed international “Water Explorer” program encouraging 2000+ children to conserve water; initiated registration, upgraded online resources, managed social media, and completed strategic planning 
+
+  """
+  
 +++

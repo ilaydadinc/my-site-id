@@ -13,19 +13,7 @@
     </image>
     
     <item>
-      <title>My awesome post!</title>
-      <link>/project/awesome-project/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/project/awesome-project/</guid>
-      <description>
-
-
-&lt;p&gt;An amazing plot:&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Snowshoe Hare Body Condition</title>
+      <title>Data Wrangling and Visualization</title>
       <link>/project/awesome-project/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/project/awesome-project/</guid>
@@ -94,11 +82,12 @@ table2&amp;lt;- summary_snowshoe%&amp;gt;%
  snowshoe_graph_2&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/project/awesome-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Figure 2: Snowshoe Hare Body Condition over the years (1998-2012).&lt;/strong&gt; Body Weight/ Hindfoot Length is used as the Body Condition Index based on the previous research stating that body condition is strongly correlated to mass and hind foot length, and the index is robust to age and sex differences [2] The bars represent the yearly mean Body Condition Indices of both adult and juvenile snowshoe hares from both sex. Error bars indicate ± 1 standard deviation. The Body Condition Indices showed an overall decreasing trend over the years. The error bars show that variance of Body Condition Indices within the population are getting smaller. &lt;em&gt;Data used with permission from The Bonanza Creek LTER.&lt;/em&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(table2, caption = &amp;#39;&amp;lt;b&amp;gt;Table 1. Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&amp;lt;/b&amp;gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  &amp;lt;i&amp;gt;Data used with permission from The Bonanza Creek LTER.&amp;lt;i&amp;gt; &amp;#39;) %&amp;gt;% 
+&lt;p&gt;Over the years, snowshow hare population density has been decreasing. Studies has been conducted to see if this is related to the physical conditions of snowshow hares. The graph in Figure 2 shows there is a general decreasing trend in the body conditions of snowshow hares in Bonanza Creek. Also, there is less variance in the body conditions withing the survivor population.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(table2, caption = &amp;#39;&amp;lt;b&amp;gt;Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&amp;lt;/b&amp;gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  &amp;lt;i&amp;gt;Data used with permission from The Bonanza Creek LTER.&amp;lt;i&amp;gt; &amp;#39;) %&amp;gt;% 
         kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;,&amp;quot;responsive&amp;quot;, &amp;quot;hold_position&amp;quot;, &amp;quot;hover&amp;quot;,&amp;quot;condensed&amp;quot;,&amp;quot;bordered&amp;quot;), full_width = FALSE, position = &amp;quot;center&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;table class=&#34;table table-striped table-responsive table-hover table-condensed table-bordered&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
 &lt;caption&gt;
-&lt;span id=&#34;tab:unnamed-chunk-5&#34;&gt;Table 1: &lt;/span&gt;&lt;b&gt;Table 1. Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&lt;/b&gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences. &lt;i&gt;Data used with permission from The Bonanza Creek LTER.&lt;i&gt; &lt;/i&gt;&lt;/i&gt;
+&lt;span id=&#34;tab:unnamed-chunk-5&#34;&gt;Table 1: &lt;/span&gt;&lt;b&gt;Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&lt;/b&gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences. &lt;i&gt;Data used with permission from The Bonanza Creek LTER.&lt;i&gt; &lt;/i&gt;&lt;/i&gt;
 &lt;/caption&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -384,52 +373,301 @@ Mean Body Condition Index (g/mm)
     </item>
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <title>Principle Component Analysis</title>
+      <link>/project/my-new-project/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/my-new-project/</guid>
       <description>
 
 
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;center&gt;
+&lt;div id=&#34;nutritional-information-of-cheese&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;NUTRITIONAL INFORMATION OF CHEESE&lt;/h3&gt;
+&lt;/center&gt;
 &lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
+&lt;div id=&#34;part-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 1&lt;/h3&gt;
+&lt;p&gt;U.S. Department of Agriculture compiles the nutritional information of various of foods groups such as dairy and egg products, spices and herbs, fats and oils and etc through the integrated data system FoodData Central. The data includes total energy content(kcal) as well as the amount of nutrients and vitamins. I’ll be exploring dairy and egg products and focusing on cheese, because I love cheese. If you do too, keep reading and find out about this how different nutritional information are correlated and how the variance in this information can be expressed as much as possible.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data Source: U.S. Department of Agriculture , Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;part-2&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 2&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Read in the data
+#Do some cleanup
+
+nutrient &amp;lt;- read_csv(&amp;quot;usda_nutrients.csv&amp;quot;) %&amp;gt;% 
+  clean_names() %&amp;gt;% 
+  mutate(
+    food_group = str_to_lower(food_group))
+
+# Explore the data
+summary(nutrient)
+names(nutrient)
+
+#gg_miss_var(nutrient)
+
+#name columns have a lot of missing variables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Getting just the cheese
+#getting rid of name columns
+
+nutrient_cheese &amp;lt;-nutrient %&amp;gt;% 
+  filter(food_group==&amp;quot;dairy and egg products&amp;quot;) %&amp;gt;% 
+    select(-common_name, - mfg_name, -scientific_name) %&amp;gt;% 
+  mutate(
+    descrip = str_to_lower(descrip)
+    )%&amp;gt;% 
+  filter(str_detect(descrip, pattern = &amp;quot;cheese&amp;quot;))
+
+#making the subset for the PCA with energy content, all the nutrients and vitamins
+
+cheese_subset &amp;lt;- nutrient_cheese %&amp;gt;% 
+  select(energy_kcal:zinc_usrda)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Trying prcomp function
+my_cheese_pca &amp;lt;- prcomp(cheese_subset, scale = TRUE)
+
+my_cheese_pca
+
+#looking at na situation
+#summary(cheese_subset)
+
+#double checking for the missing variables
+#gg_miss_var(cheese_subset)
+
+#no na
+
+#matrixplot(cheese_subset)
+
+#no red
+
+#plotting my pca
+
+#plot(my_cheese_pca)
+
+
+#summary(my_cheese_pca) # cumulative proportion for 2 dimensions is 44%
+
+#biplot(my_cheese_pca)
+
+#messy
+
+
+#trying autopilot
+my_biplot &amp;lt;- autoplot(my_cheese_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.label.size = 3,
+                      loadings.label.colour = &amp;quot;black&amp;quot;,
+                      loadings.label.repel = TRUE) +
+  theme_minimal()
+
+  
+
+my_biplot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# looks better&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#let&amp;#39;s just look at the macro nutrients
+# Fix the column names
+
+my_sub2 &amp;lt;- cheese_subset %&amp;gt;% 
+  select(energy_kcal, protein_g, fat_g,carb_g,sugar_g,fiber_g) %&amp;gt;% 
+  rename(&amp;quot;Energy Content (kcal)&amp;quot; = energy_kcal,
+         &amp;quot;Protein (g)&amp;quot;= protein_g, &amp;quot;Fat (g)&amp;quot;= fat_g, &amp;quot;Sugar (g)&amp;quot;= sugar_g,&amp;quot;Fiber (g)&amp;quot;=fiber_g, &amp;quot;Carbohydrates (g)&amp;quot;= carb_g)
+
+
+my_better_pca &amp;lt;- prcomp(my_sub2, scale = TRUE)
+
+summary(my_better_pca) # cumulative proportion for 2 dimensions is 64%&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Importance of components:
+##                           PC1    PC2    PC3    PC4     PC5     PC6
+## Standard deviation     1.5849 1.1611 0.9915 0.8351 0.67778 0.01245
+## Proportion of Variance 0.4186 0.2247 0.1638 0.1162 0.07656 0.00003
+## Cumulative Proportion  0.4186 0.6433 0.8072 0.9234 0.99997 1.00000&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#plot(my_better_pca, xlab= &amp;quot;Dimensions&amp;quot;)
+
+biplot(my_better_pca)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_better_biplot &amp;lt;- autoplot(my_better_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.colour= &amp;quot;black&amp;quot;,
+                      loadings.label.size = 4,
+                      loadings.label.colour = &amp;quot;darkblue&amp;quot;,
+                      loadings.label.repel = TRUE) +
+  labs(x = &amp;quot;Principal Component 1 (41.86%)&amp;quot;, y = &amp;quot;Principal Component 2 (22.47%)&amp;quot;)+
+  theme_minimal()
+
+my_better_biplot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 2. Principle Component Analysis (PCA) biplot for nutritional information of cheese.&lt;/strong&gt; Energy content is expressed in kilocalories whereas fat, carbohydrates, fiber, protein, sugar are expressed in grams. Principle Component 1 explains 41.86% and Principle Component 2 explains 22.7% of the variation in the data, resulting in the cumulative proportion of 64.33%. Energy content and fat had high negative loading scores on PC1 meaning high variance. &lt;em&gt;Data used with permission from USDA.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;part-3-summary-of-major-takeaways&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 3 : Summary of Major Takeaways&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Energy content is highly correalted to the amount of fat.&lt;/li&gt;
+&lt;li&gt;Carbohydrates are highly correlated to sugar.&lt;/li&gt;
+&lt;li&gt;Carbohydrates and sugar are minimally correlated with fiber&lt;/li&gt;
+&lt;li&gt;Energy content and fat are negatively correlated to fiber&lt;/li&gt;
+&lt;li&gt;Energy and fat show the highest variation in the PC1 direction&lt;/li&gt;
+&lt;li&gt;Cumulative proportion is 64% meaning 64 of the variance can be explained in 2 dimensions.&lt;/li&gt;
+&lt;li&gt;Biplot shows that there are no clusters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time Series Data Analysis</title>
+      <link>/project/internal-project/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/internal-project/</guid>
+      <description>
+
+
+&lt;p&gt;Main objectives of this project are to examine the changes in the Steelhead Salmon (Oncorhynchus mykiss) passage across the Bonneville Dam in Oregon between the years 1940 and 2019, and to identify the seasonality and cyclycality of the passage if present. The data is provided by Columbia Basin Research [1] and it is analyzed to see whether there are seasonal patterns and/or bigger trends in salmon passage.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#read in the data
+
+salmon_data &amp;lt;- read_csv(&amp;quot;cbr_fish.csv&amp;quot;) %&amp;gt;%
+  clean_names()
+
+#unique(salmon_data$location)
+#unique(salmon_data$parameter)
+#summary(salmon_data)
+
+# single location, single parameter
+
+# arrange dates
+salmon_date &amp;lt;- salmon_data %&amp;gt;%
+  separate(mm_dd,into=c(&amp;quot;day&amp;quot;,&amp;quot;month&amp;quot;),sep=&amp;quot;-&amp;quot;) %&amp;gt;% 
+  mutate(yy_mm_dd=ymd(paste(year,month,day)))%&amp;gt;% 
+    mutate(month_sep = yearmonth(yy_mm_dd)) %&amp;gt;%
+  drop_na(month_sep)
+
+
+#plotting daily passage
+
+salmon_graph&amp;lt;-ggplot(data = salmon_date, aes(x = yy_mm_dd, y = value)) +
+  geom_line(color=&amp;#39;midnightblue&amp;#39;) +
+  theme_bw()+
+  labs(x = &amp;quot;Year&amp;quot;, y = &amp;quot;Daily Steelhead Salmon Passage&amp;quot;)+
+  theme(text = element_text(size=12))+
+  scale_x_date(date_breaks = &amp;quot;5 year&amp;quot;, date_labels = &amp;quot;%Y&amp;quot;, limit=c(as.Date(&amp;quot;1939-12-31&amp;quot;),as.Date(&amp;quot;2019-12-31&amp;quot;)))+
+  theme(axis.text.x=element_text(angle=30, hjust=1))
+  
+  
+
+salmon_graph&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/internal-project/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 2: Times series plot of daily Steelhead Salmon passage across the Bonneville Dam (1940-2019)&lt;/strong&gt;. The times series plots shows a seasonal pattern yearly. There might be a broader cyclical trend which needs further exploration. &lt;em&gt;Data used with permission from Columbia Basin Research.&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# group by year and month and find the total counts
+salmon_date2&amp;lt;- salmon_date %&amp;gt;% 
+  group_by(year, month) %&amp;gt;% 
+  summarise(
+    value=sum(value, na.rm= TRUE))
+
+#rename the columns
+salmon_date3&amp;lt;-salmon_date2 %&amp;gt;% 
+  rename(&amp;quot;Year&amp;quot;=year) %&amp;gt;% 
+  rename(&amp;quot;Month&amp;quot;=month)
+
+
+salmon_date3$Month = factor(salmon_date3$Month, levels = month.abb)
+
+options(scipen = 999) #getting rid of scientific notation
+
+ggplot(data = salmon_date3, aes(x = Month, y = value, group = Year)) +
+  geom_line(aes(color = Year))+
+  theme_bw()+
+  labs(y=&amp;quot;Monthly Total Count&amp;quot;)+
+  scale_colour_gradient(low = &amp;quot;salmon1&amp;quot;, high = &amp;quot;salmon4&amp;quot;)+
+  theme(text = element_text(size=12))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/internal-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 3: Seasonplot of monthly total steelhead Salmon passage across the Bonneville Dam over the years&lt;/strong&gt;. Colors indicate the years from 1940-2019 going from lighter to darker. The seasonplot shows that there is a seasonal pattern in salmon passage. It starts to increase around May-June, peaks around August every year. &lt;em&gt;Data used with permission from Columbia Basin Research.&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# use index by function and find annual sums
+salmon_annual &amp;lt;- salmon_ts %&amp;gt;% 
+  index_by(Year = ~year(.)) %&amp;gt;% 
+  summarize(
+    total = sum(value,na.rm = TRUE)
+  )
+
+ggplot(data = salmon_annual, aes(x = Year, y = total)) +
+  geom_line(color = &amp;quot;salmon4&amp;quot;) +
+  geom_smooth(color = &amp;quot;darkorchid4&amp;quot;,
+              size = 0.2,
+              linetype = &amp;quot;dashed&amp;quot;,
+              fill = &amp;quot;darkorchid2&amp;quot;,
+              alpha = 0.1) +
+  theme_bw()+
+  scale_x_continuous(breaks = seq(1940,2020, by = 5))+
+  labs(y=&amp;quot;Annual Steelhead Salmon Passage&amp;quot;)+
+  theme(axis.text.x=element_text(angle=30, hjust=1))+
+  theme(text = element_text(size=12))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/internal-project/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 4: Total Annual Steelhead Salmon Passage(1940-2019)&lt;/strong&gt;. Smoothed dashed lines are added to observe the overall trends over the years. It is unclear whether there is a broader cyclical trend in Steelhead Salmon passage. Likewise, it is hard to talk about a bigger general trend. &lt;em&gt;Data used with permission from Columbia Basin Research.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REFERENCES&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; : Columbia River DART, Columbia Basin Research, University of Washington. (2019). Adult Passage Graphics &amp;amp; Text. Available from &lt;a href=&#34;http://www.cbr.washington.edu/dart/query/adult_graph_text&#34; class=&#34;uri&#34;&gt;http://www.cbr.washington.edu/dart/query/adult_graph_text&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Spatial Data Analysis</title>
+      <link>/project/external-project/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/external-project/</guid>
+      <description>
+
+
+&lt;p&gt;Maui is the second largest Hawaiian island with the surface area of 727.2 square miles [1]. This project aims to visualize the watersheds and main types of land covers on the island.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#reading in the data
+
+hawaii_land &amp;lt;- read_sf(dsn = &amp;quot;.&amp;quot;, layer = &amp;quot;Land_Use_Land_Cover_LULC&amp;quot;) %&amp;gt;% 
+  dplyr::select(landcover) %&amp;gt;% 
+  filter(!str_detect(landcover, pattern = &amp;quot;0&amp;quot;))
+
+#filtering for main land use types
+hawaii_land2&amp;lt;- hawaii_land %&amp;gt;% 
+  filter(landcover %in% c(&amp;quot;Cropland and Pasture&amp;quot;,&amp;quot;Residential&amp;quot;,&amp;quot;Evergreen Forest Land&amp;quot;, &amp;quot;Shrub and Brush Rangeland&amp;quot;))
+  
+#unique(hawaii_land$landcover)
+  
+hawaii_water &amp;lt;- read_sf(dsn = &amp;quot;.&amp;quot;, layer = &amp;quot;Watersheds&amp;quot;)
+
+# checking crs 
+#st_crs(hawaii_land)  #4326
+
+#st_crs(hawaii_water) #4326&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# grpahing watersheds and land use together
+ggplot(hawaii_land)+
+  geom_sf(color = &amp;quot;black&amp;quot;,
+          size = 0.1) + 
+  geom_sf(data = hawaii_land2, 
+          aes(fill = landcover), color = &amp;quot;NA&amp;quot;) +
+  scale_fill_manual(values=c(&amp;quot;darkgoldenrod2&amp;quot;,&amp;quot;darkgreen&amp;quot;,&amp;quot;darkorchid4&amp;quot;,&amp;quot;palegreen3&amp;quot;),name=&amp;quot;Land Cover&amp;quot;)+
+   geom_sf(data = hawaii_water, 
+          color = &amp;quot;dodgerblue4&amp;quot;, 
+          alpha = 0.3,
+          size = 0.15,
+          color = &amp;quot;NA&amp;quot;) + 
+  coord_sf(datum = NA) + # Removes graticules
+  geom_point(aes(x = -156.3319, y = 20.7984), size = 2)+
+  geom_text(x = -156.3319, y = 20.82, label = &amp;quot;Maui&amp;quot;, size=7)+ 
+  coord_sf(xlim = c(-155.98,-156.68), ylim = c(20.45,21.1)) +
+  theme_bw()+
+  labs(x = &amp;quot;Longitude&amp;quot;, y = &amp;quot;Latitude&amp;quot;)+
+  theme(
+    legend.position = &amp;quot;right&amp;quot;,
+    legend.justification = c(&amp;quot;right&amp;quot;),
+    legend.box.just = &amp;quot;right&amp;quot;,
+    legend.margin = margin(3, 3, 3, 3),
+    legend.text = element_text(size = 7)
+    )+
+   annotation_scale(location = &amp;quot;br&amp;quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &amp;quot;br&amp;quot;, which_north = &amp;quot;true&amp;quot;, 
+        pad_x = unit(0.3, &amp;quot;in&amp;quot;), pad_y = unit(0.3, &amp;quot;in&amp;quot;),
+        style = north_arrow_fancy_orienteering)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/external-project/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;strong&gt;Figure 2: Map of main land use types and the watersheds on the island of Maui&lt;/strong&gt;. The most prominent land use types are Cropland and Pasture, Evergreen Forest Land, and Shrub and Brush Rangeland. Evergreen Forestland is mostly clustred around the watersheds. &lt;em&gt;Data used with permission from Hawaii Statewide GIS Program.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REFERENCES&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; : “Table 5.08 - Land Area of Islands: 2000”, 2004 State of Hawaii Data Book (PDF), State of Hawaii, 2004, retrieved 2007-07-23.&lt;/p&gt;
 </description>
     </item>
     

@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Ilayda Dinc</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Ilayda Dinc</title>
@@ -55,39 +55,15 @@
     </item>
     
     <item>
-      <title>Example Talk</title>
-      <link>/talk/example/</link>
-      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>/talk/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&#39;s &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <title>Carbon for Crops Master&#39;s Thesis Project</title>
+      <link>/publication/conference-paper/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/conference-paper/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>My awesome post!</title>
-      <link>/project/awesome-project/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/project/awesome-project/</guid>
-      <description>
-
-
-&lt;p&gt;An amazing plot:&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Snowshoe Hare Body Condition</title>
+      <title>Data Wrangling and Visualization</title>
       <link>/project/awesome-project/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/project/awesome-project/</guid>
@@ -156,11 +132,12 @@ table2&amp;lt;- summary_snowshoe%&amp;gt;%
  snowshoe_graph_2&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/project/awesome-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Figure 2: Snowshoe Hare Body Condition over the years (1998-2012).&lt;/strong&gt; Body Weight/ Hindfoot Length is used as the Body Condition Index based on the previous research stating that body condition is strongly correlated to mass and hind foot length, and the index is robust to age and sex differences [2] The bars represent the yearly mean Body Condition Indices of both adult and juvenile snowshoe hares from both sex. Error bars indicate ± 1 standard deviation. The Body Condition Indices showed an overall decreasing trend over the years. The error bars show that variance of Body Condition Indices within the population are getting smaller. &lt;em&gt;Data used with permission from The Bonanza Creek LTER.&lt;/em&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(table2, caption = &amp;#39;&amp;lt;b&amp;gt;Table 1. Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&amp;lt;/b&amp;gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  &amp;lt;i&amp;gt;Data used with permission from The Bonanza Creek LTER.&amp;lt;i&amp;gt; &amp;#39;) %&amp;gt;% 
+&lt;p&gt;Over the years, snowshow hare population density has been decreasing. Studies has been conducted to see if this is related to the physical conditions of snowshow hares. The graph in Figure 2 shows there is a general decreasing trend in the body conditions of snowshow hares in Bonanza Creek. Also, there is less variance in the body conditions withing the survivor population.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(table2, caption = &amp;#39;&amp;lt;b&amp;gt;Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&amp;lt;/b&amp;gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  &amp;lt;i&amp;gt;Data used with permission from The Bonanza Creek LTER.&amp;lt;i&amp;gt; &amp;#39;) %&amp;gt;% 
         kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;,&amp;quot;responsive&amp;quot;, &amp;quot;hold_position&amp;quot;, &amp;quot;hover&amp;quot;,&amp;quot;condensed&amp;quot;,&amp;quot;bordered&amp;quot;), full_width = FALSE, position = &amp;quot;center&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;table class=&#34;table table-striped table-responsive table-hover table-condensed table-bordered&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
 &lt;caption&gt;
-&lt;span id=&#34;tab:unnamed-chunk-5&#34;&gt;Table 1: &lt;/span&gt;&lt;b&gt;Table 1. Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&lt;/b&gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences. &lt;i&gt;Data used with permission from The Bonanza Creek LTER.&lt;i&gt; &lt;/i&gt;&lt;/i&gt;
+&lt;span id=&#34;tab:unnamed-chunk-5&#34;&gt;Table 1: &lt;/span&gt;&lt;b&gt;Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&lt;/b&gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences. &lt;i&gt;Data used with permission from The Bonanza Creek LTER.&lt;i&gt; &lt;/i&gt;&lt;/i&gt;
 &lt;/caption&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -446,277 +423,301 @@ Mean Body Condition Index (g/mm)
     </item>
     
     <item>
-      <title>Writing technical content in Academic</title>
-      <link>/post/writing-technical-content/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>/post/writing-technical-content/</guid>
-      <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;On this page, you&#39;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the &lt;code&gt;highlight&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```python
-import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;math&#34;&gt;Math&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;$...$&lt;/code&gt; or &lt;code&gt;$$...$$&lt;/code&gt;, respectively.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
-\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
-{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left |\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right |^2}$$&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code&gt;$\nabla F(\mathbf{x}_{n})$&lt;/code&gt; renders as $\nabla F(\mathbf{x}_{n})$.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the &lt;code&gt;\\&lt;/code&gt; math linebreak:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \\
-1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \&lt;br&gt;
-1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$&lt;/p&gt;
-&lt;h3 id=&#34;diagrams&#34;&gt;Diagrams&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for diagrams. You can enable this feature by toggling the &lt;code&gt;diagram&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file or by adding &lt;code&gt;diagram: true&lt;/code&gt; to your page front matter.&lt;/p&gt;
-&lt;p&gt;An example &lt;strong&gt;flowchart&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;sequence diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;Gantt diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;class diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;state diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;
-&lt;p&gt;You can even write your todo lists in Academic too:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;- [x] Write math example
-- [x] Write diagram example
-- [ ] Do something else
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Write math example&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Write diagram example&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Do something else&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;tables&#34;&gt;Tables&lt;/h3&gt;
-&lt;p&gt;Represent your data in tables:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;asides&#34;&gt;Asides&lt;/h3&gt;
-&lt;p&gt;Academic supports a &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#alerts&#34;&gt;shortcode for asides&lt;/a&gt;, also referred to as &lt;em&gt;notices&lt;/em&gt;, &lt;em&gt;hints&lt;/em&gt;, or &lt;em&gt;alerts&lt;/em&gt;. By wrapping a paragraph in &lt;code&gt;{{% alert note %}} ... {{% /alert %}}&lt;/code&gt;, it will render as an aside.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% alert note %}}
-A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-{{% /alert %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example preprint / working paper</title>
-      <link>/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/post/jupyter/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
-Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_1_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Welcome to Academic!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34;&gt;Install Anaconda&lt;/a&gt; which includes Python 3 and JupyterLab.&lt;/p&gt;
-&lt;p&gt;Alternatively, install JupyterLab with &lt;code&gt;pip3 install jupyterlab&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
-&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY-WEBSITE-FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;SHORT-POST-TITLE&amp;gt;&lt;/code&gt; with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-cd &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-jupyter lab index.ipynb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;jupyter&lt;/code&gt; command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.&lt;/p&gt;
-&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
-&lt;p&gt;The first cell of your Jupter notebook will contain your post metadata (&lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34;&gt;front matter&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;In Jupter, choose &lt;em&gt;Markdown&lt;/em&gt; as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: My post&#39;s title
-date: 2019-09-01
+      <title>Principle Component Analysis</title>
+      <link>/project/my-new-project/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/my-new-project/</guid>
+      <description>
 
-# Put any other Academic metadata here...
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Edit the metadata of your post, using the &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34;&gt;documentation&lt;/a&gt; as a guide to the available options.&lt;/p&gt;
-&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&#39;s folder.&lt;/p&gt;
-&lt;p&gt;For other tips, such as using math, see the guide on &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
+
+&lt;center&gt;
+&lt;div id=&#34;nutritional-information-of-cheese&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;NUTRITIONAL INFORMATION OF CHEESE&lt;/h3&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 1&lt;/h3&gt;
+&lt;p&gt;U.S. Department of Agriculture compiles the nutritional information of various of foods groups such as dairy and egg products, spices and herbs, fats and oils and etc through the integrated data system FoodData Central. The data includes total energy content(kcal) as well as the amount of nutrients and vitamins. I’ll be exploring dairy and egg products and focusing on cheese, because I love cheese. If you do too, keep reading and find out about this how different nutritional information are correlated and how the variance in this information can be expressed as much as possible.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data Source: U.S. Department of Agriculture , Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-2&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 2&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Read in the data
+#Do some cleanup
+
+nutrient &amp;lt;- read_csv(&amp;quot;usda_nutrients.csv&amp;quot;) %&amp;gt;% 
+  clean_names() %&amp;gt;% 
+  mutate(
+    food_group = str_to_lower(food_group))
+
+# Explore the data
+summary(nutrient)
+names(nutrient)
+
+#gg_miss_var(nutrient)
+
+#name columns have a lot of missing variables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Getting just the cheese
+#getting rid of name columns
+
+nutrient_cheese &amp;lt;-nutrient %&amp;gt;% 
+  filter(food_group==&amp;quot;dairy and egg products&amp;quot;) %&amp;gt;% 
+    select(-common_name, - mfg_name, -scientific_name) %&amp;gt;% 
+  mutate(
+    descrip = str_to_lower(descrip)
+    )%&amp;gt;% 
+  filter(str_detect(descrip, pattern = &amp;quot;cheese&amp;quot;))
+
+#making the subset for the PCA with energy content, all the nutrients and vitamins
+
+cheese_subset &amp;lt;- nutrient_cheese %&amp;gt;% 
+  select(energy_kcal:zinc_usrda)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Trying prcomp function
+my_cheese_pca &amp;lt;- prcomp(cheese_subset, scale = TRUE)
+
+my_cheese_pca
+
+#looking at na situation
+#summary(cheese_subset)
+
+#double checking for the missing variables
+#gg_miss_var(cheese_subset)
+
+#no na
+
+#matrixplot(cheese_subset)
+
+#no red
+
+#plotting my pca
+
+#plot(my_cheese_pca)
+
+
+#summary(my_cheese_pca) # cumulative proportion for 2 dimensions is 44%
+
+#biplot(my_cheese_pca)
+
+#messy
+
+
+#trying autopilot
+my_biplot &amp;lt;- autoplot(my_cheese_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.label.size = 3,
+                      loadings.label.colour = &amp;quot;black&amp;quot;,
+                      loadings.label.repel = TRUE) +
+  theme_minimal()
+
+  
+
+my_biplot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# looks better&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#let&amp;#39;s just look at the macro nutrients
+# Fix the column names
+
+my_sub2 &amp;lt;- cheese_subset %&amp;gt;% 
+  select(energy_kcal, protein_g, fat_g,carb_g,sugar_g,fiber_g) %&amp;gt;% 
+  rename(&amp;quot;Energy Content (kcal)&amp;quot; = energy_kcal,
+         &amp;quot;Protein (g)&amp;quot;= protein_g, &amp;quot;Fat (g)&amp;quot;= fat_g, &amp;quot;Sugar (g)&amp;quot;= sugar_g,&amp;quot;Fiber (g)&amp;quot;=fiber_g, &amp;quot;Carbohydrates (g)&amp;quot;= carb_g)
+
+
+my_better_pca &amp;lt;- prcomp(my_sub2, scale = TRUE)
+
+summary(my_better_pca) # cumulative proportion for 2 dimensions is 64%&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Importance of components:
+##                           PC1    PC2    PC3    PC4     PC5     PC6
+## Standard deviation     1.5849 1.1611 0.9915 0.8351 0.67778 0.01245
+## Proportion of Variance 0.4186 0.2247 0.1638 0.1162 0.07656 0.00003
+## Cumulative Proportion  0.4186 0.6433 0.8072 0.9234 0.99997 1.00000&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#plot(my_better_pca, xlab= &amp;quot;Dimensions&amp;quot;)
+
+biplot(my_better_pca)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_better_biplot &amp;lt;- autoplot(my_better_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.colour= &amp;quot;black&amp;quot;,
+                      loadings.label.size = 4,
+                      loadings.label.colour = &amp;quot;darkblue&amp;quot;,
+                      loadings.label.repel = TRUE) +
+  labs(x = &amp;quot;Principal Component 1 (41.86%)&amp;quot;, y = &amp;quot;Principal Component 2 (22.47%)&amp;quot;)+
+  theme_minimal()
+
+my_better_biplot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 2. Principle Component Analysis (PCA) biplot for nutritional information of cheese.&lt;/strong&gt; Energy content is expressed in kilocalories whereas fat, carbohydrates, fiber, protein, sugar are expressed in grams. Principle Component 1 explains 41.86% and Principle Component 2 explains 22.7% of the variation in the data, resulting in the cumulative proportion of 64.33%. Energy content and fat had high negative loading scores on PC1 meaning high variance. &lt;em&gt;Data used with permission from USDA.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-3-summary-of-major-takeaways&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 3 : Summary of Major Takeaways&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Energy content is highly correalted to the amount of fat.&lt;/li&gt;
+&lt;li&gt;Carbohydrates are highly correlated to sugar.&lt;/li&gt;
+&lt;li&gt;Carbohydrates and sugar are minimally correlated with fiber&lt;/li&gt;
+&lt;li&gt;Energy content and fat are negatively correlated to fiber&lt;/li&gt;
+&lt;li&gt;Energy and fat show the highest variation in the PC1 direction&lt;/li&gt;
+&lt;li&gt;Cumulative proportion is 64% meaning 64 of the variance can be explained in 2 dimensions.&lt;/li&gt;
+&lt;li&gt;Biplot shows that there are no clusters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time Series Data Analysis</title>
+      <link>/project/internal-project/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/internal-project/</guid>
+      <description>
+
+
+&lt;p&gt;Main objectives of this project are to examine the changes in the Steelhead Salmon (Oncorhynchus mykiss) passage across the Bonneville Dam in Oregon between the years 1940 and 2019, and to identify the seasonality and cyclycality of the passage if present. The data is provided by Columbia Basin Research [1] and it is analyzed to see whether there are seasonal patterns and/or bigger trends in salmon passage.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#read in the data
+
+salmon_data &amp;lt;- read_csv(&amp;quot;cbr_fish.csv&amp;quot;) %&amp;gt;%
+  clean_names()
+
+#unique(salmon_data$location)
+#unique(salmon_data$parameter)
+#summary(salmon_data)
+
+# single location, single parameter
+
+# arrange dates
+salmon_date &amp;lt;- salmon_data %&amp;gt;%
+  separate(mm_dd,into=c(&amp;quot;day&amp;quot;,&amp;quot;month&amp;quot;),sep=&amp;quot;-&amp;quot;) %&amp;gt;% 
+  mutate(yy_mm_dd=ymd(paste(year,month,day)))%&amp;gt;% 
+    mutate(month_sep = yearmonth(yy_mm_dd)) %&amp;gt;%
+  drop_na(month_sep)
+
+
+#plotting daily passage
+
+salmon_graph&amp;lt;-ggplot(data = salmon_date, aes(x = yy_mm_dd, y = value)) +
+  geom_line(color=&amp;#39;midnightblue&amp;#39;) +
+  theme_bw()+
+  labs(x = &amp;quot;Year&amp;quot;, y = &amp;quot;Daily Steelhead Salmon Passage&amp;quot;)+
+  theme(text = element_text(size=12))+
+  scale_x_date(date_breaks = &amp;quot;5 year&amp;quot;, date_labels = &amp;quot;%Y&amp;quot;, limit=c(as.Date(&amp;quot;1939-12-31&amp;quot;),as.Date(&amp;quot;2019-12-31&amp;quot;)))+
+  theme(axis.text.x=element_text(angle=30, hjust=1))
+  
+  
+
+salmon_graph&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/internal-project/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 2: Times series plot of daily Steelhead Salmon passage across the Bonneville Dam (1940-2019)&lt;/strong&gt;. The times series plots shows a seasonal pattern yearly. There might be a broader cyclical trend which needs further exploration. &lt;em&gt;Data used with permission from Columbia Basin Research.&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# group by year and month and find the total counts
+salmon_date2&amp;lt;- salmon_date %&amp;gt;% 
+  group_by(year, month) %&amp;gt;% 
+  summarise(
+    value=sum(value, na.rm= TRUE))
+
+#rename the columns
+salmon_date3&amp;lt;-salmon_date2 %&amp;gt;% 
+  rename(&amp;quot;Year&amp;quot;=year) %&amp;gt;% 
+  rename(&amp;quot;Month&amp;quot;=month)
+
+
+salmon_date3$Month = factor(salmon_date3$Month, levels = month.abb)
+
+options(scipen = 999) #getting rid of scientific notation
+
+ggplot(data = salmon_date3, aes(x = Month, y = value, group = Year)) +
+  geom_line(aes(color = Year))+
+  theme_bw()+
+  labs(y=&amp;quot;Monthly Total Count&amp;quot;)+
+  scale_colour_gradient(low = &amp;quot;salmon1&amp;quot;, high = &amp;quot;salmon4&amp;quot;)+
+  theme(text = element_text(size=12))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/internal-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 3: Seasonplot of monthly total steelhead Salmon passage across the Bonneville Dam over the years&lt;/strong&gt;. Colors indicate the years from 1940-2019 going from lighter to darker. The seasonplot shows that there is a seasonal pattern in salmon passage. It starts to increase around May-June, peaks around August every year. &lt;em&gt;Data used with permission from Columbia Basin Research.&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# use index by function and find annual sums
+salmon_annual &amp;lt;- salmon_ts %&amp;gt;% 
+  index_by(Year = ~year(.)) %&amp;gt;% 
+  summarize(
+    total = sum(value,na.rm = TRUE)
+  )
+
+ggplot(data = salmon_annual, aes(x = Year, y = total)) +
+  geom_line(color = &amp;quot;salmon4&amp;quot;) +
+  geom_smooth(color = &amp;quot;darkorchid4&amp;quot;,
+              size = 0.2,
+              linetype = &amp;quot;dashed&amp;quot;,
+              fill = &amp;quot;darkorchid2&amp;quot;,
+              alpha = 0.1) +
+  theme_bw()+
+  scale_x_continuous(breaks = seq(1940,2020, by = 5))+
+  labs(y=&amp;quot;Annual Steelhead Salmon Passage&amp;quot;)+
+  theme(axis.text.x=element_text(angle=30, hjust=1))+
+  theme(text = element_text(size=12))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/internal-project/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 4: Total Annual Steelhead Salmon Passage(1940-2019)&lt;/strong&gt;. Smoothed dashed lines are added to observe the overall trends over the years. It is unclear whether there is a broader cyclical trend in Steelhead Salmon passage. Likewise, it is hard to talk about a bigger general trend. &lt;em&gt;Data used with permission from Columbia Basin Research.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REFERENCES&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; : Columbia River DART, Columbia Basin Research, University of Washington. (2019). Adult Passage Graphics &amp;amp; Text. Available from &lt;a href=&#34;http://www.cbr.washington.edu/dart/query/adult_graph_text&#34; class=&#34;uri&#34;&gt;http://www.cbr.washington.edu/dart/query/adult_graph_text&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Spatial Data Analysis</title>
+      <link>/project/external-project/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/external-project/</guid>
+      <description>
+
+
+&lt;p&gt;Maui is the second largest Hawaiian island with the surface area of 727.2 square miles [1]. This project aims to visualize the watersheds and main types of land covers on the island.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#reading in the data
+
+hawaii_land &amp;lt;- read_sf(dsn = &amp;quot;.&amp;quot;, layer = &amp;quot;Land_Use_Land_Cover_LULC&amp;quot;) %&amp;gt;% 
+  dplyr::select(landcover) %&amp;gt;% 
+  filter(!str_detect(landcover, pattern = &amp;quot;0&amp;quot;))
+
+#filtering for main land use types
+hawaii_land2&amp;lt;- hawaii_land %&amp;gt;% 
+  filter(landcover %in% c(&amp;quot;Cropland and Pasture&amp;quot;,&amp;quot;Residential&amp;quot;,&amp;quot;Evergreen Forest Land&amp;quot;, &amp;quot;Shrub and Brush Rangeland&amp;quot;))
+  
+#unique(hawaii_land$landcover)
+  
+hawaii_water &amp;lt;- read_sf(dsn = &amp;quot;.&amp;quot;, layer = &amp;quot;Watersheds&amp;quot;)
+
+# checking crs 
+#st_crs(hawaii_land)  #4326
+
+#st_crs(hawaii_water) #4326&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# grpahing watersheds and land use together
+ggplot(hawaii_land)+
+  geom_sf(color = &amp;quot;black&amp;quot;,
+          size = 0.1) + 
+  geom_sf(data = hawaii_land2, 
+          aes(fill = landcover), color = &amp;quot;NA&amp;quot;) +
+  scale_fill_manual(values=c(&amp;quot;darkgoldenrod2&amp;quot;,&amp;quot;darkgreen&amp;quot;,&amp;quot;darkorchid4&amp;quot;,&amp;quot;palegreen3&amp;quot;),name=&amp;quot;Land Cover&amp;quot;)+
+   geom_sf(data = hawaii_water, 
+          color = &amp;quot;dodgerblue4&amp;quot;, 
+          alpha = 0.3,
+          size = 0.15,
+          color = &amp;quot;NA&amp;quot;) + 
+  coord_sf(datum = NA) + # Removes graticules
+  geom_point(aes(x = -156.3319, y = 20.7984), size = 2)+
+  geom_text(x = -156.3319, y = 20.82, label = &amp;quot;Maui&amp;quot;, size=7)+ 
+  coord_sf(xlim = c(-155.98,-156.68), ylim = c(20.45,21.1)) +
+  theme_bw()+
+  labs(x = &amp;quot;Longitude&amp;quot;, y = &amp;quot;Latitude&amp;quot;)+
+  theme(
+    legend.position = &amp;quot;right&amp;quot;,
+    legend.justification = c(&amp;quot;right&amp;quot;),
+    legend.box.just = &amp;quot;right&amp;quot;,
+    legend.margin = margin(3, 3, 3, 3),
+    legend.text = element_text(size = 7)
+    )+
+   annotation_scale(location = &amp;quot;br&amp;quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &amp;quot;br&amp;quot;, which_north = &amp;quot;true&amp;quot;, 
+        pad_x = unit(0.3, &amp;quot;in&amp;quot;), pad_y = unit(0.3, &amp;quot;in&amp;quot;),
+        style = north_arrow_fancy_orienteering)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/external-project/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;strong&gt;Figure 2: Map of main land use types and the watersheds on the island of Maui&lt;/strong&gt;. The most prominent land use types are Cropland and Pasture, Evergreen Forest Land, and Shrub and Brush Rangeland. Evergreen Forestland is mostly clustred around the watersheds. &lt;em&gt;Data used with permission from Hawaii Statewide GIS Program.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REFERENCES&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; : “Table 5.08 - Land Area of Islands: 2000”, 2004 State of Hawaii Data Book (PDF), State of Hawaii, 2004, retrieved 2007-07-23.&lt;/p&gt;
 </description>
     </item>
     
@@ -867,209 +868,29 @@ Three
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Academic: the website builder for Hugo</title>
-      <link>/post/getting-started/</link>
+      <title>Adopt a Cookstove Project</title>
+      <link>/post/cookstove/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/post/getting-started/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&#39;ll get in less than 10 minutes, or &lt;a href=&#34;https://sourcethemes.com/academic/#expo&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
+      <guid>/post/cookstove/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Sunday, August 11th - Kayonza, Rwanda&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Written by&lt;/strong&gt;: Professor Sangwon Suh &amp;amp; Ilayda Dinc of UCSB Bren School of Environmental Studies and Management&lt;/p&gt;
+&lt;p&gt;It was Sunday afternoon. We went to Kayonza district and met twenty representatives from four co-ops for the first demonstration of new high-efficiency cookstoves.  Since our first day in Rwanda, we have been interviewing with the people in the cooperatives about their cooking method, fuel consumption, and cost. Those twenty representatives were the people we have already met a couple of days ago. As soon as we got there, we could tell from their eyes that they were happy to see us.&lt;/p&gt;
+&lt;p&gt;This is a project we have been working on since April, so we had an idea about the severity of the situation. According to our research, every year, 3.8 million people die prematurely from the use of inefficient cookstoves [1] Globally, as many as 3 billion people, mainly in rural Africa and Asia, are relying on inefficient cooking technologies such as three-stone wood fire and charcoal stoves for daily cooking needs [2]. The bystanders of these primitive stoves, mainly women and children, are exposed to a large quantity of hazardous substances equivalent to that from smoking 2 packs of cigarettes every day [3]. They also generate large quantities of greenhouse gas (GHG) emissions and accelerate deforestation.&lt;/p&gt;
+&lt;p&gt;But the things we witnessed were even more serious than we anticipated, partly because the communities that we visited were composed of underprivileged families and individuals even in Rwandan standard. We learned that most of the families that we visited spend almost half of their income on buying cooking fuels such as firewood and charcoal. They told us that they spend on average about 20,000 Rwandan Franc (RF) per month per household for cooking fuels such as firewood and charcoal. The efficiency of the conventional stoves that run on these fuels goes only about 5-10%, so much of the cooking fuels are wasted. The high-efficiency gasification cookstove that we demonstrated, however, reaches about 50% thermal efficiency. Also, some of them were experiencing respiratory problems such as coughing. So, our interviews and observations proved that efficient and cleaner cooking technology is urgently needed in Rwanda.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./IMG_5619.jpeg&#34; alt=&#34;jpeg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;On the day of the demonstration, we were not entirely sure how receptive the co-op members would be. It was an important first test for us.  We started to assemble the cookstoves while co-op members were watching us with curious eyes. After a couple, they started to help us and assemble the cookstoves themselves.&lt;/p&gt;
+&lt;p&gt;Then, we were ready to cook. We started to cook rice using a conventional three-stone fire stove and a Mimi Moto gasification stove side-by-side. The idea was to let the co-op members discover and experience the differences on their own so that they see the value of high-efficiency cookstove by themselves in the absence of our preaching. “What’s the difference that you see?” Sangwon asked.&lt;/p&gt;
+&lt;p&gt;The co-op members responded immediately. Multiple members pointed out that the three-stone fire stove was smoky while the high-efficiency gasification stove wasn’t. They also noticed that the flame from the three-stone stove wasn’t well contained, whereas that from the gasification stove was concentrated only to the center. The moment that we heard those two responses, we knew that these co-op members would readily adopt the new technology, and they indeed did.&lt;/p&gt;
+&lt;p&gt;From the beginning of the demonstration, they attentively watched and took notes on their notebooks. After we were done with cooking, they started to ask very thoughtful questions. One of them asked about what happens if water touches the circuit area.  That question made us even happier because it was obvious that they want to take good care of their new cookstoves. Another one asked about the sustainability of wood pellet supply. This was very exciting to hear because in the long run, supply security of wood pellets should be addressed and they are already advancing their thoughts to the future. Hearing them coming up with these questions made us even more hopeful about the uptake of the new cooking technology.&lt;/p&gt;
+&lt;p&gt;Recognizing the benefits of the new cooking technology by themselves, by the end of the session, these co-op representatives became eager to enroll in our experimental program. Each participant of the program receives a cookstove, and, in return, they report to us the amount of fuel consumption before and after receiving the new cookstove. One of the co-op leaders, Eugene, volunteered to take the responsibility of collecting and reporting data for us.&lt;/p&gt;
+&lt;p&gt;By the end of the day, we were able to demonstrate the new cookstove, trained 20 co-op representatives, distributed our first batch of high-efficiency cookstoves, and successfully launched our data collection program.&lt;/p&gt;
+&lt;p&gt;And the best part? Seeing how happy the people are as they walk away with new cookstoves. These stoves will help save money and improve the health of their family members. As we approach the end of our trip, this day proved us it was only the beginning.&lt;/p&gt;
+&lt;p&gt;[1] “Global Health Observatory (GHO) data,” World Health Organization (WHO),https://www.who.int/gho/phe/indoor_air_pollution/burden/en/
+[2] “Household air pollution and health,” WHO, &lt;a href=&#34;https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health&#34;&gt;https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health&lt;/a&gt;
+[3] “Fuel for life: household energy and health,” WHO, &lt;a href=&#34;https://www.who.int/airpollution/publications/fuelforlife.pdf?ua=1&#34;&gt;https://www.who.int/airpollution/publications/fuelforlife.pdf?ua=1&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;👉 &lt;a href=&#34;#install&#34;&gt;&lt;strong&gt;Get Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📚 &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34;&gt;View the &lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 &lt;a href=&#34;https://discourse.gohugo.io&#34;&gt;&lt;strong&gt;Ask a question&lt;/strong&gt; on the forum&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👥 &lt;a href=&#34;https://spectrum.chat/academic&#34;&gt;Chat with the &lt;strong&gt;community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/source_themes&#34;&gt;@source_themes&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23MadeWithAcademic&amp;amp;src=typd&#34;&gt;#MadeWithAcademic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💡 &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating?&lt;/strong&gt; View the &lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;❤ &lt;strong&gt;Support development&lt;/strong&gt; of Academic:
-&lt;ul&gt;
-&lt;li&gt;☕️ &lt;a href=&#34;https://paypal.me/cushen&#34;&gt;&lt;strong&gt;Donate a coffee&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💵 &lt;a href=&#34;https://www.patreon.com/cushen&#34;&gt;Become a backer on &lt;strong&gt;Patreon&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🖼️ &lt;a href=&#34;https://www.redbubble.com/people/neutreno/works/34387919-academic&#34;&gt;Decorate your laptop or journal with an Academic &lt;strong&gt;sticker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👕 &lt;a href=&#34;https://academic.threadless.com/&#34;&gt;Wear the &lt;strong&gt;T-shirt&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👩‍💻 &lt;a href=&#34;https://sourcethemes.com/academic/docs/contribute/&#34;&gt;&lt;strong&gt;Contribute&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The text of this blog has been adapted from existing writings by Adopt a Cookstove team members and taken from World Dance for Humanity&#39;s Rwanda Travel blog. For more information and photos: &lt;a href=&#34;https://wd4hrwandatripblog.wixsite.com/rwandatrips/post/day-12-cookstoves-in-kayonza&#34;&gt;https://wd4hrwandatripblog.wixsite.com/rwandatrips/post/day-12-cookstoves-in-kayonza&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; data-caption=&#34;Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34;&gt;
-&lt;img data-src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Key features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://sourcethemes.com/academic/docs/jupyter/&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 15+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;p&gt;Academic comes with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can  choose their preferred mode - click the sun/moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully &lt;a href=&#34;https://sourcethemes.com/academic/docs/customization/#custom-theme&#34;&gt;customizable&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34;&gt;Academic Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34;&gt;Academic Scripts&lt;/a&gt;:&lt;/strong&gt; Scripts to help migrate content to new versions of Academic&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-web-browser&#34;&gt;&lt;strong&gt;one-click install using your web browser (recommended)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-git&#34;&gt;install on your computer using &lt;strong&gt;Git&lt;/strong&gt; with the Command Prompt/Terminal app&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-zip&#34;&gt;install on your computer by downloading the &lt;strong&gt;ZIP files&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34;&gt;install on your computer with &lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Then &lt;a href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34;&gt;personalize and deploy your new site&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34;&gt;View the Update Guide&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34;&gt;Github&lt;/a&gt; to help keep track of &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34;&gt;updates&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example journal article</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>
-
-
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example conference paper</title>
-      <link>/publication/conference-paper/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

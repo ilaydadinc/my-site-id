@@ -1,21 +1,23 @@
 ---
-title: "Snowshoe Hare Body Condition"
-author: ''
+title: "Data Wrangling and Visualization"
+author: 'Ilayda Dinc'
 date: '2020-02-23'
 slug: awesome-project
 categories: []
 tags:
   - Academic
   - R Markdown
-subtitle: ''
-summary: ''
+  - Data wrangling
+  - Data visualization
+subtitle: 'Snowshoe Hares in Bonanza Creek Experimental Forest'
+summary: 'This project visualizes the changes in the body condition of Snowshow hares over the years.'
 authors: [Ilayda Dinc]
 lastmod: '2020-02-23T15:02:39-08:00'
 featured: no
 image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
+  caption: 'Snowshoe Hare (Lepus Americanus)'
+  focal_point: 'smart'
+  preview_only: yes
 projects: []
 ---
 
@@ -23,6 +25,7 @@ projects: []
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 
 ```{r, message = FALSE, warning = FALSE, include=FALSE}
  
@@ -130,10 +133,11 @@ snowshoe_graph_2 <- ggplot(summary_snowshoe, aes(x = year, y = avg_body)) +
 
 **Figure 2: Snowshoe Hare Body Condition over the years (1998-2012).** Body Weight/ Hindfoot Length is used as the Body Condition Index based on the previous research stating that body condition is strongly correlated to mass and hind foot length, and the index is robust to age and sex differences [2] The bars represent the yearly mean Body Condition Indices of both adult and juvenile snowshoe hares from both sex. Error bars indicate ± 1 standard deviation. The Body Condition Indices showed an overall decreasing trend over the years. The error bars show that variance of Body Condition Indices within the population are getting smaller. *Data used with permission from The Bonanza Creek LTER.*
 
+Over the years, snowshow hare population density has been decreasing. Studies has been conducted to see if this is related to the physical conditions of snowshow hares. The graph in Figure 2 shows there is a general decreasing trend in the body conditions of snowshow hares in Bonanza Creek. Also, there is less variance in the body conditions withing the survivor population.
 
 ```{r message= FALSE, warning=FALSE}
 
-kable(table2, caption = '<b>Table 1. Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.</b> The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  <i>Data used with permission from The Bonanza Creek LTER.<i> ') %>% 
+kable(table2, caption = '<b>Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.</b> The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  <i>Data used with permission from The Bonanza Creek LTER.<i> ') %>% 
         kable_styling(bootstrap_options = c("striped","responsive", "hold_position", "hover","condensed","bordered"), full_width = FALSE, position = "center")
 
 

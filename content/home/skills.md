@@ -11,7 +11,6 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 
-
 title = "Skills"
 
 subtitle = ""
@@ -32,7 +31,6 @@ subtitle = ""
 
   name = "R"
 
-  description = "90%"
 
 [[feature]]
 
@@ -40,18 +38,16 @@ subtitle = ""
 
   icon_pack = "fas"
 
-  name = "Statistics"
+  name = "Data Analysis"
 
-  description = "100%"  
 
 [[feature]]
 
-  icon = "camera-retro"
+  icon = "tasks"
 
   icon_pack = "fas"
 
-  name = "Photography"
+  name = "Project Management"
 
-  description = "10%"
 
 +++

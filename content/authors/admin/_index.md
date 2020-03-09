@@ -1,8 +1,7 @@
 ---
 authors:
 - admin
-bio: My research interests include sustainable development, climate resilliency, and life cycle assessment
-  matter.
+bio: My research interests include sustainable development, climate resilliency, and life cycle assessment.
 education:
   courses:
   - course: Masters in Environmental Science and Management
@@ -28,12 +27,15 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/ilaydadinc
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/gizemilaydadinc/
 superuser: true
 user_groups:
 - Researchers
 - Visitors
 ---
 
-Ilayda Dinc is a 2nd year masters student at the University of California Santa Barbara Bren School of Environmental Science and Management. Her research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Ilayda Dinc is a 2nd year masters student at the University of California Santa Barbara Bren School of Environmental Science and Management. She is focusing on Strategic Environmental Communication and Media. Her master's thesis projects aims to assess the impact of regenerative organic agriculture. 
 
 

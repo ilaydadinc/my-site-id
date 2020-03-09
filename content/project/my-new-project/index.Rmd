@@ -1,24 +1,207 @@
 ---
-title: My awesome post!
-author: ''
+title: Principle Component Analysis
+author: 'Ilayda Dinc'
 date: '2020-02-23'
-slug: awesome-project
+slug: my-new-project
 categories: []
 tags:
   - Academic
   - R Markdown
-subtitle: ''
-summary: ''
+  - Principle Component Analysis
+subtitle: 'Principal Component Analysis of Nutrional Information of Cheese'
+summary: 'Principal Component Analysis of Nutrional Information of Cheese'
 authors: [Ilayda Dinc]
 lastmod: '2020-01-09T15:02:39-08:00'
 featured: no
 image:
-  caption: ''
+  caption: 'Source: shutterstock.com'
   focal_point: ''
   preview_only: no
 projects: []
 ---
 
-An amazing plot:
+<center>
+
+### NUTRITIONAL INFORMATION OF CHEESE
+
+</center>
+### Part 1
+
+U.S. Department of Agriculture compiles the nutritional information of various of foods groups such as dairy and egg products, spices and herbs, fats and oils and etc through the integrated data system FoodData Central. The data includes total energy content(kcal) as well as the amount of nutrients and vitamins. I'll be exploring dairy and egg products and focusing on cheese, because I love cheese. If you do too, keep reading and find out about this how different nutritional information are correlated and how the variance in this information can be expressed as much as possible. 
+
+
+*Data Source: U.S. Department of Agriculture , Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov.*
+
+### Part 2
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r message=FALSE, warning=FALSE, include= FALSE}
+
+#Load the packages
+
+library(tidyverse)
+library(janitor)
+library(naniar)
+library(VIM)
+library(skimr)
+library(ggfortify)
+library(captioner)
+```
+
+
+```{r figurecaps, include=FALSE}
+
+fig_nums <- captioner()
+fig_nums("my_better_biplot", " Principle Component Analysis (PCA) of biplot for nutritional information of cheese. Energy content is expressed in kilocalories whereas fat, carbohydrates, fiber, protein, sugar are expressed in grams. Principle Component 1 explains 41.86% and Principle Component 2 explains 22.7% of the variation in the data, resulting in the cumulative proportion of 64.33%. Energy content and fat had high negative loading scores on PC1 meaning high variance ")
+
+
+```
+
+```{r message=FALSE, warning=FALSE,  echo=TRUE, results='hide', fig.align='center'}
+
+#Read in the data
+#Do some cleanup
+
+nutrient <- read_csv("usda_nutrients.csv") %>% 
+  clean_names() %>% 
+  mutate(
+    food_group = str_to_lower(food_group))
+
+# Explore the data
+summary(nutrient)
+names(nutrient)
+
+#gg_miss_var(nutrient)
+
+#name columns have a lot of missing variables
+```
+
+
+
+```{r message=FALSE, warning=FALSE,  echo=TRUE, results='hide',fig.align='center'}
+#Getting just the cheese
+#getting rid of name columns
+
+nutrient_cheese <-nutrient %>% 
+  filter(food_group=="dairy and egg products") %>% 
+    select(-common_name, - mfg_name, -scientific_name) %>% 
+  mutate(
+    descrip = str_to_lower(descrip)
+    )%>% 
+  filter(str_detect(descrip, pattern = "cheese"))
+
+#making the subset for the PCA with energy content, all the nutrients and vitamins
+
+cheese_subset <- nutrient_cheese %>% 
+  select(energy_kcal:zinc_usrda)
+
+```
+
+
+```{r message=FALSE, warning=FALSE , echo=TRUE, results='hide', fig.align='center'}
+
+# Trying prcomp function
+my_cheese_pca <- prcomp(cheese_subset, scale = TRUE)
+
+my_cheese_pca
+
+#looking at na situation
+#summary(cheese_subset)
+
+#double checking for the missing variables
+#gg_miss_var(cheese_subset)
+
+#no na
+
+#matrixplot(cheese_subset)
+
+#no red
+
+#plotting my pca
+
+#plot(my_cheese_pca)
+
+
+#summary(my_cheese_pca) # cumulative proportion for 2 dimensions is 44%
+
+#biplot(my_cheese_pca)
+
+#messy
+
+
+#trying autopilot
+my_biplot <- autoplot(my_cheese_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.label.size = 3,
+                      loadings.label.colour = "black",
+                      loadings.label.repel = TRUE) +
+  theme_minimal()
+
+  
+
+my_biplot
+
+
+# looks better
+
+
+
+```
+
+
+```{r message=FALSE, warning=FALSE, fig.align='center'}
+#let's just look at the macro nutrients
+# Fix the column names
+
+my_sub2 <- cheese_subset %>% 
+  select(energy_kcal, protein_g, fat_g,carb_g,sugar_g,fiber_g) %>% 
+  rename("Energy Content (kcal)" = energy_kcal,
+         "Protein (g)"= protein_g, "Fat (g)"= fat_g, "Sugar (g)"= sugar_g,"Fiber (g)"=fiber_g, "Carbohydrates (g)"= carb_g)
+
+
+my_better_pca <- prcomp(my_sub2, scale = TRUE)
+
+summary(my_better_pca) # cumulative proportion for 2 dimensions is 64%
+
+
+#plot(my_better_pca, xlab= "Dimensions")
+
+biplot(my_better_pca)
+
+
+my_better_biplot <- autoplot(my_better_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.colour= "black",
+                      loadings.label.size = 4,
+                      loadings.label.colour = "darkblue",
+                      loadings.label.repel = TRUE) +
+  labs(x = "Principal Component 1 (41.86%)", y = "Principal Component 2 (22.47%)")+
+  theme_minimal()
+
+my_better_biplot
+
+
+
+
+```
+
+**Figure 2. Principle Component Analysis (PCA) biplot for nutritional information of cheese.** Energy content is expressed in kilocalories whereas fat, carbohydrates, fiber, protein, sugar are expressed in grams. Principle Component 1 explains 41.86% and Principle Component 2 explains 22.7% of the variation in the data, resulting in the cumulative proportion of 64.33%. Energy content and fat had high negative loading scores on PC1 meaning high variance. *Data used with permission from USDA.*
+
+
+### Part 3 : Summary of Major Takeaways
+
+- Energy content is highly correalted to the amount of fat.
+- Carbohydrates are highly correlated to sugar.
+- Carbohydrates and sugar are minimally correlated with fiber
+- Energy content and fat are negatively correlated to fiber
+- Energy and fat show the highest variation in the PC1 direction
+- Cumulative proportion is 64% meaning 64 of the variance can be explained in 2 dimensions.
+- Biplot shows that there are no clusters.
 
 

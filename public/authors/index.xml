@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Authors</title>
@@ -13,27 +13,43 @@
     </image>
     
     <item>
-      <title>Ilayda Dinc</title>
-      <link>/authors/ilayda-dinc/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/ilayda-dinc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title></title>
       <link>/authors/admin/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
-      <description>&lt;p&gt;Ilayda Dinc is a 2nd year masters student at the University of California Santa Barbara Bren School of Environmental Science and Management. Her research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.&lt;/p&gt;
+      <description>&lt;p&gt;Ilayda Dinc is a 2nd year masters student at the University of California Santa Barbara Bren School of Environmental Science and Management. She is focusing on Strategic Environmental Communication and Media. Her master&#39;s thesis projects aims to assess the impact of regenerative organic agriculture.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Robert Ford</title>
-      <link>/authors/robert-ford/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/robert-ford/</guid>
+      <title>Alex Ivina</title>
+      <link>/authors/alex-ivina/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/alex-ivina/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Karan Shetty</title>
+      <link>/authors/karan-shetty/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/karan-shetty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tyler Cobian</title>
+      <link>/authors/tyler-cobian/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/tyler-cobian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ilayda Dinc</title>
+      <link>/authors/ilayda-dinc/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/ilayda-dinc/</guid>
       <description></description>
     </item>
     
