@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data wrangling | Ilayda Dinc</title>
+    <link>/tags/data-wrangling/</link>
+      <atom:link href="/tags/data-wrangling/index.xml" rel="self" type="application/rss+xml" />
+    <description>Data wrangling</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Data wrangling</title>
+      <link>/tags/data-wrangling/</link>
+    </image>
+    
+    <item>
+      <title>Data Wrangling and Visualization</title>
+      <link>/project/awesome-project/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/awesome-project/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The study aims to understand the changes in Snowshoe hare(Lepus americanus) density and physical characteristics of Snowshoe hares in Bonanza Creek Experimental Forest in Alaska between years 1998-2012. Capture-recapture studies of snowshoe hares at 5 different locations showed that snowshoe hare densities has been declining since 1999[1]. This project analyzes the survival of snowshow hares by looking at the changes in physical characteristics of Snowshoe hares over time.&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;images/hare.jpg&#34; alt=&#34;Figure 1: Snowshoe Hare (Lepus Americanus) in the season change. Snowshoe hares are covered with white fur over winter and their fur starts to turn brown as the snow fades. Source: http://timberjay.com/stories/for-snowshoe-hares-its-time-for-a-change,14060&#34; id=&#34;id&#34; class=&#34;class&#34; style=&#34;width:30.0%;height:70.0%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;strong&gt;Figure 1: Snowshoe Hare (Lepus Americanus) in the season change.&lt;/strong&gt; Snowshoe hares are covered with white fur over winter and their fur starts to turn brown as the snow fades. &lt;em&gt;Source: &lt;a href=&#34;http://timberjay.com/stories/for-snowshoe-hares-its-time-for-a-change,14060&#34; class=&#34;uri&#34;&gt;http://timberjay.com/stories/for-snowshoe-hares-its-time-for-a-change,14060&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Read in the data
+#Do some cleanup
+
+snowshoe&amp;lt;- read_csv(&amp;quot;showshoe_lter.csv&amp;quot;) %&amp;gt;% 
+  mutate(date=mdy(date)) %&amp;gt;% 
+  separate(date, into = c(&amp;quot;year&amp;quot;,&amp;quot;month&amp;quot;,&amp;quot;day&amp;quot;), sep = &amp;quot;-&amp;quot;)%&amp;gt;% 
+  mutate(grid= str_to_lower(grid), 
+   age=str_to_lower(age),
+   sex=str_to_lower(sex)) %&amp;gt;% 
+  select(-time,-notes)
+
+
+snowshoe2&amp;lt;- snowshoe %&amp;gt;% 
+  mutate(body_condition= weight/hindft) # add a column for the body condition index
+
+# summary(snowshoe2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary_snowshoe&amp;lt;- snowshoe2 %&amp;gt;% 
+  group_by(year) %&amp;gt;% 
+  summarize(
+    avg_mass = mean(weight,  na.rm = TRUE),
+    avg_length= mean(hindft,na.rm = TRUE),
+    avg_body= mean(body_condition,na.rm = TRUE),
+    sd= sd(body_condition,na.rm= TRUE),
+    sample =length(year))
+ # mutate columns for average stats: average weight, average hindfeet length and average body condition index and the standard deviation of average body condition index
+
+
+#Create the data frame for the summary statistics table
+
+table2&amp;lt;- summary_snowshoe%&amp;gt;% 
+  mutate(`Mean Weight (g) ` = round(avg_mass, 2),
+         `Mean Hindfeet Length (mm)` = round(avg_length, 2),
+         &amp;#39;Mean Body Condition Index (g/mm)&amp;#39;= round(avg_body,2)) %&amp;gt;% 
+  rename(&amp;quot;Year&amp;quot; = year, &amp;quot;Sample Size&amp;quot;= sample) %&amp;gt;% 
+    drop_na() %&amp;gt;% 
+  select(-avg_mass,-avg_length,-avg_body,-sd) #Clean up the names and get rid of deselect unused columns&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;snowshoe_graph_2 &amp;lt;- ggplot(summary_snowshoe, aes(x = year, y = avg_body)) +
+  geom_bar(stat=&amp;quot;identity&amp;quot;, color=&amp;quot;black&amp;quot;,fill= &amp;quot;darkseagreen&amp;quot;,
+           position=position_dodge())+
+  geom_errorbar(aes(ymin=avg_body-sd, ymax=avg_body+sd), width=.2,
+                 position=position_dodge())+
+  theme_bw() +
+  labs(x = &amp;quot;Year&amp;quot;, y = &amp;quot;Body Condition Index (g/mm)&amp;quot;)+
+  scale_y_continuous(breaks = seq(0,24, by = 2))+
+  theme(text = element_text(size=14))+
+   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+
+
+
+
+
+ snowshoe_graph_2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/awesome-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 2: Snowshoe Hare Body Condition over the years (1998-2012).&lt;/strong&gt; Body Weight/ Hindfoot Length is used as the Body Condition Index based on the previous research stating that body condition is strongly correlated to mass and hind foot length, and the index is robust to age and sex differences [2] The bars represent the yearly mean Body Condition Indices of both adult and juvenile snowshoe hares from both sex. Error bars indicate ± 1 standard deviation. The Body Condition Indices showed an overall decreasing trend over the years. The error bars show that variance of Body Condition Indices within the population are getting smaller. &lt;em&gt;Data used with permission from The Bonanza Creek LTER.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Over the years, snowshow hare population density has been decreasing. Studies has been conducted to see if this is related to the physical conditions of snowshow hares. The graph in Figure 2 shows there is a general decreasing trend in the body conditions of snowshow hares in Bonanza Creek. Also, there is less variance in the body conditions withing the survivor population.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(table2, caption = &amp;#39;&amp;lt;b&amp;gt;Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&amp;lt;/b&amp;gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences.  &amp;lt;i&amp;gt;Data used with permission from The Bonanza Creek LTER.&amp;lt;i&amp;gt; &amp;#39;) %&amp;gt;% 
+        kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;,&amp;quot;responsive&amp;quot;, &amp;quot;hold_position&amp;quot;, &amp;quot;hover&amp;quot;,&amp;quot;condensed&amp;quot;,&amp;quot;bordered&amp;quot;), full_width = FALSE, position = &amp;quot;center&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table table-striped table-responsive table-hover table-condensed table-bordered&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-5&#34;&gt;Table 1: &lt;/span&gt;&lt;b&gt;Body conditions of Snowshoe hares in Bonanza Creek between 1998 and 2012.&lt;/b&gt; The table summarizes the information about body condition metrics over the years. Sample size represents the number of catch-recatches. Information about mean weight and mean hindfeet length are presented, and mean body condition index ( mean of (weight / hindfeet length) ratios) is calculated to account for the age and sex differences. &lt;i&gt;Data used with permission from The Bonanza Creek LTER.&lt;i&gt; &lt;/i&gt;&lt;/i&gt;
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Year
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Sample Size
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Mean Weight (g)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Mean Hindfeet Length (mm)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Mean Body Condition Index (g/mm)
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+60
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1704.75
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+125.57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13.30
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1999
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+392
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1250.38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+130.82
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.88
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+260
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1376.64
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+131.66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11.32
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2001
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+102
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1390.21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+133.79
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11.04
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2002
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1201.57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+124.72
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.24
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2003
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+59
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1212.72
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+127.56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.36
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2004
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+97
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1472.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+131.78
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11.05
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2005
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+174
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1269.00
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+124.30
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.43
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2006
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+193
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1364.58
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+126.07
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.72
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2007
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+203
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1371.70
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+127.79
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.04
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2008
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+351
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1317.25
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+127.45
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.44
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2009
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+491
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1337.73
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+134.60
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.58
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2010
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+402
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1392.84
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+134.00
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.72
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2011
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+427
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1403.96
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+133.75
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.83
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2012
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+131
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1327.38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+137.60
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.53
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;REFERENCES&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; :Kielland, Knut; Chapin, F. Stuart; Ruess, Roger W. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present, Bonanza Creek LTER - University of Alaska Fairbanks. BNZ:55, &lt;a href=&#34;http://www.lter.uaf.edu/data/data-detail/id/55&#34; class=&#34;uri&#34;&gt;http://www.lter.uaf.edu/data/data-detail/id/55&lt;/a&gt;. &lt;a href=&#34;doi:10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&#34; class=&#34;uri&#34;&gt;doi:10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[2]&lt;/strong&gt; Wirsing Aaron J, Steury Todd D, Murray Dennis L. Noninvasive estimation of body composition in small mammals: a comparison of conductive and morphometric techniques. Physiol Biochem Zool. 2002;75(5):489–97&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

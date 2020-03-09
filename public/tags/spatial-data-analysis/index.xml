@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spatial Data Analysis | Ilayda Dinc</title>
+    <link>/tags/spatial-data-analysis/</link>
+      <atom:link href="/tags/spatial-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Spatial Data Analysis</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Spatial Data Analysis</title>
+      <link>/tags/spatial-data-analysis/</link>
+    </image>
+    
+    <item>
+      <title>Spatial Data Analysis</title>
+      <link>/project/external-project/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/external-project/</guid>
+      <description>
+
+
+&lt;p&gt;Maui is the second largest Hawaiian island with the surface area of 727.2 square miles [1]. This project aims to visualize the watersheds and main types of land covers on the island.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#reading in the data
+
+hawaii_land &amp;lt;- read_sf(dsn = &amp;quot;.&amp;quot;, layer = &amp;quot;Land_Use_Land_Cover_LULC&amp;quot;) %&amp;gt;% 
+  dplyr::select(landcover) %&amp;gt;% 
+  filter(!str_detect(landcover, pattern = &amp;quot;0&amp;quot;))
+
+#filtering for main land use types
+hawaii_land2&amp;lt;- hawaii_land %&amp;gt;% 
+  filter(landcover %in% c(&amp;quot;Cropland and Pasture&amp;quot;,&amp;quot;Residential&amp;quot;,&amp;quot;Evergreen Forest Land&amp;quot;, &amp;quot;Shrub and Brush Rangeland&amp;quot;))
+  
+#unique(hawaii_land$landcover)
+  
+hawaii_water &amp;lt;- read_sf(dsn = &amp;quot;.&amp;quot;, layer = &amp;quot;Watersheds&amp;quot;)
+
+# checking crs 
+#st_crs(hawaii_land)  #4326
+
+#st_crs(hawaii_water) #4326&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# grpahing watersheds and land use together
+ggplot(hawaii_land)+
+  geom_sf(color = &amp;quot;black&amp;quot;,
+          size = 0.1) + 
+  geom_sf(data = hawaii_land2, 
+          aes(fill = landcover), color = &amp;quot;NA&amp;quot;) +
+  scale_fill_manual(values=c(&amp;quot;darkgoldenrod2&amp;quot;,&amp;quot;darkgreen&amp;quot;,&amp;quot;darkorchid4&amp;quot;,&amp;quot;palegreen3&amp;quot;),name=&amp;quot;Land Cover&amp;quot;)+
+   geom_sf(data = hawaii_water, 
+          color = &amp;quot;dodgerblue4&amp;quot;, 
+          alpha = 0.3,
+          size = 0.15,
+          color = &amp;quot;NA&amp;quot;) + 
+  coord_sf(datum = NA) + # Removes graticules
+  geom_point(aes(x = -156.3319, y = 20.7984), size = 2)+
+  geom_text(x = -156.3319, y = 20.82, label = &amp;quot;Maui&amp;quot;, size=7)+ 
+  coord_sf(xlim = c(-155.98,-156.68), ylim = c(20.45,21.1)) +
+  theme_bw()+
+  labs(x = &amp;quot;Longitude&amp;quot;, y = &amp;quot;Latitude&amp;quot;)+
+  theme(
+    legend.position = &amp;quot;right&amp;quot;,
+    legend.justification = c(&amp;quot;right&amp;quot;),
+    legend.box.just = &amp;quot;right&amp;quot;,
+    legend.margin = margin(3, 3, 3, 3),
+    legend.text = element_text(size = 7)
+    )+
+   annotation_scale(location = &amp;quot;br&amp;quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &amp;quot;br&amp;quot;, which_north = &amp;quot;true&amp;quot;, 
+        pad_x = unit(0.3, &amp;quot;in&amp;quot;), pad_y = unit(0.3, &amp;quot;in&amp;quot;),
+        style = north_arrow_fancy_orienteering)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/external-project/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;strong&gt;Figure 2: Map of main land use types and the watersheds on the island of Maui&lt;/strong&gt;. The most prominent land use types are Cropland and Pasture, Evergreen Forest Land, and Shrub and Brush Rangeland. Evergreen Forestland is mostly clustred around the watersheds. &lt;em&gt;Data used with permission from Hawaii Statewide GIS Program.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REFERENCES&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; : “Table 5.08 - Land Area of Islands: 2000”, 2004 State of Hawaii Data Book (PDF), State of Hawaii, 2004, retrieved 2007-07-23.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

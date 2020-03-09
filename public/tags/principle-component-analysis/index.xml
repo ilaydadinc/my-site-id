@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Principle Component Analysis | Ilayda Dinc</title>
+    <link>/tags/principle-component-analysis/</link>
+      <atom:link href="/tags/principle-component-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Principle Component Analysis</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Principle Component Analysis</title>
+      <link>/tags/principle-component-analysis/</link>
+    </image>
+    
+    <item>
+      <title>Principle Component Analysis</title>
+      <link>/project/my-new-project/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/my-new-project/</guid>
+      <description>
+
+
+&lt;center&gt;
+&lt;div id=&#34;nutritional-information-of-cheese&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;NUTRITIONAL INFORMATION OF CHEESE&lt;/h3&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 1&lt;/h3&gt;
+&lt;p&gt;U.S. Department of Agriculture compiles the nutritional information of various of foods groups such as dairy and egg products, spices and herbs, fats and oils and etc through the integrated data system FoodData Central. The data includes total energy content(kcal) as well as the amount of nutrients and vitamins. I’ll be exploring dairy and egg products and focusing on cheese, because I love cheese. If you do too, keep reading and find out about this how different nutritional information are correlated and how the variance in this information can be expressed as much as possible.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Data Source: U.S. Department of Agriculture , Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-2&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 2&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Read in the data
+#Do some cleanup
+
+nutrient &amp;lt;- read_csv(&amp;quot;usda_nutrients.csv&amp;quot;) %&amp;gt;% 
+  clean_names() %&amp;gt;% 
+  mutate(
+    food_group = str_to_lower(food_group))
+
+# Explore the data
+summary(nutrient)
+names(nutrient)
+
+#gg_miss_var(nutrient)
+
+#name columns have a lot of missing variables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Getting just the cheese
+#getting rid of name columns
+
+nutrient_cheese &amp;lt;-nutrient %&amp;gt;% 
+  filter(food_group==&amp;quot;dairy and egg products&amp;quot;) %&amp;gt;% 
+    select(-common_name, - mfg_name, -scientific_name) %&amp;gt;% 
+  mutate(
+    descrip = str_to_lower(descrip)
+    )%&amp;gt;% 
+  filter(str_detect(descrip, pattern = &amp;quot;cheese&amp;quot;))
+
+#making the subset for the PCA with energy content, all the nutrients and vitamins
+
+cheese_subset &amp;lt;- nutrient_cheese %&amp;gt;% 
+  select(energy_kcal:zinc_usrda)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Trying prcomp function
+my_cheese_pca &amp;lt;- prcomp(cheese_subset, scale = TRUE)
+
+my_cheese_pca
+
+#looking at na situation
+#summary(cheese_subset)
+
+#double checking for the missing variables
+#gg_miss_var(cheese_subset)
+
+#no na
+
+#matrixplot(cheese_subset)
+
+#no red
+
+#plotting my pca
+
+#plot(my_cheese_pca)
+
+
+#summary(my_cheese_pca) # cumulative proportion for 2 dimensions is 44%
+
+#biplot(my_cheese_pca)
+
+#messy
+
+
+#trying autopilot
+my_biplot &amp;lt;- autoplot(my_cheese_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.label.size = 3,
+                      loadings.label.colour = &amp;quot;black&amp;quot;,
+                      loadings.label.repel = TRUE) +
+  theme_minimal()
+
+  
+
+my_biplot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# looks better&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#let&amp;#39;s just look at the macro nutrients
+# Fix the column names
+
+my_sub2 &amp;lt;- cheese_subset %&amp;gt;% 
+  select(energy_kcal, protein_g, fat_g,carb_g,sugar_g,fiber_g) %&amp;gt;% 
+  rename(&amp;quot;Energy Content (kcal)&amp;quot; = energy_kcal,
+         &amp;quot;Protein (g)&amp;quot;= protein_g, &amp;quot;Fat (g)&amp;quot;= fat_g, &amp;quot;Sugar (g)&amp;quot;= sugar_g,&amp;quot;Fiber (g)&amp;quot;=fiber_g, &amp;quot;Carbohydrates (g)&amp;quot;= carb_g)
+
+
+my_better_pca &amp;lt;- prcomp(my_sub2, scale = TRUE)
+
+summary(my_better_pca) # cumulative proportion for 2 dimensions is 64%&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Importance of components:
+##                           PC1    PC2    PC3    PC4     PC5     PC6
+## Standard deviation     1.5849 1.1611 0.9915 0.8351 0.67778 0.01245
+## Proportion of Variance 0.4186 0.2247 0.1638 0.1162 0.07656 0.00003
+## Cumulative Proportion  0.4186 0.6433 0.8072 0.9234 0.99997 1.00000&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#plot(my_better_pca, xlab= &amp;quot;Dimensions&amp;quot;)
+
+biplot(my_better_pca)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_better_biplot &amp;lt;- autoplot(my_better_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.colour= &amp;quot;black&amp;quot;,
+                      loadings.label.size = 4,
+                      loadings.label.colour = &amp;quot;darkblue&amp;quot;,
+                      loadings.label.repel = TRUE) +
+  labs(x = &amp;quot;Principal Component 1 (41.86%)&amp;quot;, y = &amp;quot;Principal Component 2 (22.47%)&amp;quot;)+
+  theme_minimal()
+
+my_better_biplot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 2. Principle Component Analysis (PCA) biplot for nutritional information of cheese.&lt;/strong&gt; Energy content is expressed in kilocalories whereas fat, carbohydrates, fiber, protein, sugar are expressed in grams. Principle Component 1 explains 41.86% and Principle Component 2 explains 22.7% of the variation in the data, resulting in the cumulative proportion of 64.33%. Energy content and fat had high negative loading scores on PC1 meaning high variance. &lt;em&gt;Data used with permission from USDA.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-3-summary-of-major-takeaways&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part 3 : Summary of Major Takeaways&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Energy content is highly correalted to the amount of fat.&lt;/li&gt;
+&lt;li&gt;Carbohydrates are highly correlated to sugar.&lt;/li&gt;
+&lt;li&gt;Carbohydrates and sugar are minimally correlated with fiber&lt;/li&gt;
+&lt;li&gt;Energy content and fat are negatively correlated to fiber&lt;/li&gt;
+&lt;li&gt;Energy and fat show the highest variation in the PC1 direction&lt;/li&gt;
+&lt;li&gt;Cumulative proportion is 64% meaning 64 of the variance can be explained in 2 dimensions.&lt;/li&gt;
+&lt;li&gt;Biplot shows that there are no clusters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
