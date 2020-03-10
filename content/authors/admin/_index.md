@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: My research interests include sustainable development, climate resilliency, and life cycle assessment.
+bio: My research interests include sustainable development, climate change adaptation, and life cycle assessment.
 education:
   courses:
   - course: Masters in Environmental Science and Management
@@ -36,6 +36,6 @@ user_groups:
 - Visitors
 ---
 
-Ilayda Dinc is a 2nd year masters student at the University of California Santa Barbara Bren School of Environmental Science and Management. She is focusing on Strategic Environmental Communication and Media. Her master's thesis projects aims to assess the impact of regenerative organic agriculture. 
+Ilayda Dinc is a 2nd-year masters student at the University of California, Santa Barbara Bren School of Environmental Science and Management. She is focusing on Strategic Environmental Communication and Media. Her master's thesis project aims to assess the impact of regenerative organic agriculture. 
 
 
