@@ -36,6 +36,6 @@ user_groups:
 - Visitors
 ---
 
-Ilayda Dinc is a 2nd-year masters student at the University of California, Santa Barbara Bren School of Environmental Science and Management. She is focusing on Strategic Environmental Communication and Media. Her master's thesis project aims to assess the impact of regenerative organic agriculture. 
+Ilayda Dinc is a 2nd-year masters student at the University of California, Santa Barbara Bren School of Environmental Science and Management. She is focusing on Strategic Environmental Communication and Media. Her master's thesis project aims to assess the impacts of regenerative organic agriculture. 
 
 
