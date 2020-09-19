@@ -19,6 +19,23 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
+  title = "Analyst"
+  company = "Industrial Ecology Research Services (IERS)"
+  company_url = "https://www.iersweb.com"
+  location = "Santa Barbara, CA"
+  date_start = "2019-08-15"
+  date_end = ""
+  description = """
+  Responsibilities include:
+  
+  * GHG reporting
+  * Life Cycle Assessment
+  * Climate risk assessment
+  * CDP Consulting
+  
+  """
+
+[[experience]]
   title = "Project Coordinator"
   company = "Adopt a Cookstove Initiative, UCSB Bren School"
   company_url = ""

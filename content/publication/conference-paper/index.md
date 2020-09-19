@@ -33,10 +33,10 @@ tags:
 title: Carbon for Crops Master's Thesis Project
 #url_code: '#'
 #url_dataset: '#'
-url_pdf: "#"
-url_poster: '#'
+#url_pdf: "#"
+url_poster: "/files/poster.pdf"
 #url_project: ""
-url_slides: ""
+#url_slides: ""
 #url_source: '#'
 #url_video: '#'
 ---
